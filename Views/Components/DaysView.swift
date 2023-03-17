@@ -24,7 +24,7 @@ struct DaysView: View {
                         .padding(10)
                 }
             }
-        }.padding(.top,10).background(Rectangle().fill(.ultraThinMaterial).cornerRadius(20).shadow(radius:4))
+        }.padding(.top,10).background(Rectangle().fill(.ultraThinMaterial).cornerRadius(15).shadow(radius:4))
             .padding(.horizontal,20)
     }
 }
