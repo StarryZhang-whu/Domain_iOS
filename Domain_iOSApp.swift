@@ -11,7 +11,7 @@ import SwiftUI
 struct Domain_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            TodoView()
+            ContentView()
         }
     }
 }
