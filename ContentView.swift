@@ -26,7 +26,7 @@ struct ContentView: View {
                     Image(systemName: "circle.circle.fill")
                     Text("圈子")
                 }
-            TodoView()
+            LoginView()
                 .tabItem(){
                     Image(systemName: "person.circle")
                     Text("我的")
