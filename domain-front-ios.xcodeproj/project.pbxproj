@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F95B986529D18B85004BBDE9 /* domain_front_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B986429D18B85004BBDE9 /* domain_front_iosApp.swift */; };
 		F95B986729D18B85004BBDE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B986629D18B85004BBDE9 /* ContentView.swift */; };
 		F95B986929D18B86004BBDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F95B986829D18B86004BBDE9 /* Assets.xcassets */; };
-		F95B986C29D18B86004BBDE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F95B986B29D18B86004BBDE9 /* Preview Assets.xcassets */; };
 		F95B987629D18B86004BBDE9 /* domain_front_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B987529D18B86004BBDE9 /* domain_front_iosTests.swift */; };
 		F95B988029D18B86004BBDE9 /* domain_front_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B987F29D18B86004BBDE9 /* domain_front_iosUITests.swift */; };
 		F95B988229D18B86004BBDE9 /* domain_front_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95B988129D18B86004BBDE9 /* domain_front_iosUITestsLaunchTests.swift */; };
+		F966618E29D1939A00511507 /* Domain_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966618D29D1939A00511507 /* Domain_iOSApp.swift */; };
+		F96661A029D193CF00511507 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F966619029D193CE00511507 /* Preview Assets.xcassets */; };
+		F96661A129D193CF00511507 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619229D193CE00511507 /* Style.swift */; };
+		F96661A229D193CF00511507 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619329D193CE00511507 /* TextFieldModifier.swift */; };
+		F96661A329D193CF00511507 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619629D193CE00511507 /* TodoItem.swift */; };
+		F96661A429D193CF00511507 /* DaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619729D193CE00511507 /* DaysView.swift */; };
+		F96661A529D193CF00511507 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619929D193CE00511507 /* TodoView.swift */; };
+		F96661A629D193CF00511507 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619A29D193CE00511507 /* LoginView.swift */; };
+		F96661A729D193CF00511507 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619B29D193CE00511507 /* NewsView.swift */; };
+		F96661A829D193CF00511507 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619D29D193CF00511507 /* Auth.swift */; };
+		F96661A929D193CF00511507 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619E29D193CF00511507 /* User.swift */; };
+		F96661AA29D193CF00511507 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619F29D193CF00511507 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,15 +45,25 @@
 
 /* Begin PBXFileReference section */
 		F95B986129D18B85004BBDE9 /* domain-front-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "domain-front-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F95B986429D18B85004BBDE9 /* domain_front_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domain_front_iosApp.swift; sourceTree = "<group>"; };
 		F95B986629D18B85004BBDE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F95B986829D18B86004BBDE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F95B986B29D18B86004BBDE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F95B987129D18B86004BBDE9 /* domain-front-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "domain-front-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95B987529D18B86004BBDE9 /* domain_front_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domain_front_iosTests.swift; sourceTree = "<group>"; };
 		F95B987B29D18B86004BBDE9 /* domain-front-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "domain-front-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95B987F29D18B86004BBDE9 /* domain_front_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domain_front_iosUITests.swift; sourceTree = "<group>"; };
 		F95B988129D18B86004BBDE9 /* domain_front_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domain_front_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F966618D29D1939A00511507 /* Domain_iOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Domain_iOSApp.swift; sourceTree = "<group>"; };
+		F966619029D193CE00511507 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F966619229D193CE00511507 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		F966619329D193CE00511507 /* TextFieldModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
+		F966619629D193CE00511507 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		F966619729D193CE00511507 /* DaysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysView.swift; sourceTree = "<group>"; };
+		F966619929D193CE00511507 /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		F966619A29D193CE00511507 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F966619B29D193CE00511507 /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		F966619D29D193CF00511507 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		F966619E29D193CF00511507 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F966619F29D193CF00511507 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,20 +114,15 @@
 		F95B986329D18B85004BBDE9 /* domain-front-ios */ = {
 			isa = PBXGroup;
 			children = (
-				F95B986429D18B85004BBDE9 /* domain_front_iosApp.swift */,
+				F966619C29D193CF00511507 /* Models */,
+				F966618F29D193CE00511507 /* Preview Content */,
+				F966619129D193CE00511507 /* Styles */,
+				F966619429D193CE00511507 /* Views */,
+				F966618D29D1939A00511507 /* Domain_iOSApp.swift */,
 				F95B986629D18B85004BBDE9 /* ContentView.swift */,
 				F95B986829D18B86004BBDE9 /* Assets.xcassets */,
-				F95B986A29D18B86004BBDE9 /* Preview Content */,
 			);
 			path = "domain-front-ios";
-			sourceTree = "<group>";
-		};
-		F95B986A29D18B86004BBDE9 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F95B986B29D18B86004BBDE9 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F95B987429D18B86004BBDE9 /* domain-front-iosTests */ = {
@@ -125,6 +140,61 @@
 				F95B988129D18B86004BBDE9 /* domain_front_iosUITestsLaunchTests.swift */,
 			);
 			path = "domain-front-iosUITests";
+			sourceTree = "<group>";
+		};
+		F966618F29D193CE00511507 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F966619029D193CE00511507 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F966619129D193CE00511507 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F966619229D193CE00511507 /* Style.swift */,
+				F966619329D193CE00511507 /* TextFieldModifier.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F966619429D193CE00511507 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F966619529D193CE00511507 /* Components */,
+				F966619829D193CE00511507 /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F966619529D193CE00511507 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F966619629D193CE00511507 /* TodoItem.swift */,
+				F966619729D193CE00511507 /* DaysView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F966619829D193CE00511507 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F966619929D193CE00511507 /* TodoView.swift */,
+				F966619A29D193CE00511507 /* LoginView.swift */,
+				F966619B29D193CE00511507 /* NewsView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F966619C29D193CF00511507 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F966619D29D193CF00511507 /* Auth.swift */,
+				F966619E29D193CF00511507 /* User.swift */,
+				F966619F29D193CF00511507 /* Todo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95B986C29D18B86004BBDE9 /* Preview Assets.xcassets in Resources */,
+				F96661A029D193CF00511507 /* Preview Assets.xcassets in Resources */,
 				F95B986929D18B86004BBDE9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +327,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96661A329D193CF00511507 /* TodoItem.swift in Sources */,
 				F95B986729D18B85004BBDE9 /* ContentView.swift in Sources */,
-				F95B986529D18B85004BBDE9 /* domain_front_iosApp.swift in Sources */,
+				F96661A529D193CF00511507 /* TodoView.swift in Sources */,
+				F96661A729D193CF00511507 /* NewsView.swift in Sources */,
+				F96661A129D193CF00511507 /* Style.swift in Sources */,
+				F96661A829D193CF00511507 /* Auth.swift in Sources */,
+				F96661A229D193CF00511507 /* TextFieldModifier.swift in Sources */,
+				F96661AA29D193CF00511507 /* Todo.swift in Sources */,
+				F966618E29D1939A00511507 /* Domain_iOSApp.swift in Sources */,
+				F96661A629D193CF00511507 /* LoginView.swift in Sources */,
+				F96661A429D193CF00511507 /* DaysView.swift in Sources */,
+				F96661A929D193CF00511507 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
