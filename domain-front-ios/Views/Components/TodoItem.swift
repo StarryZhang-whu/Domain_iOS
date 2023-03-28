@@ -8,25 +8,29 @@
 import SwiftUI
 
 struct TodoItem: View {
-    var todo:Todo
+    @ObservedObject var todoshop:TodoShop
+    var locate:Int
     
     var body: some View {
         HStack {
-            Image(systemName: todo.icon).foregroundColor(Color("SecondaryColor"))
+            Image(systemName: "square")
                 .frame(width: 36, height: 36)
-                .background(.ultraThinMaterial)
-                .mask(Circle())
-            Text(todo.title).fontWeight(.semibold).lineLimit(1).foregroundColor(Color("TextColor"))
+
+            Text(todoshop.todos[locate].title).fontWeight(.semibold).lineLimit(1).foregroundColor(Color("TextColor"))
             Spacer()
-            Text(todo.deadline.formatted())
+            Text(todoshop.todos[locate].endDate.formatted())
                 .font(.caption)
                 .fontWeight(.light)
+        }
+        .onTapGesture {
+            todoshop.editingAt = locate
+            todoshop.isEditing = true
         }
     }
 }
 
 struct TodoItem_Previews: PreviewProvider {
     static var previews: some View {
-        TodoItem(todo: todos[0][0])
+        TodoItem(todoshop: TodoShop(), locate: 0)
     }
 }

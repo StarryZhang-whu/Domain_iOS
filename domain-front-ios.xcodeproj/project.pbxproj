@@ -23,7 +23,10 @@
 		F96661A729D193CF00511507 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619B29D193CE00511507 /* NewsView.swift */; };
 		F96661A829D193CF00511507 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619D29D193CF00511507 /* Auth.swift */; };
 		F96661A929D193CF00511507 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619E29D193CF00511507 /* User.swift */; };
-		F96661AA29D193CF00511507 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966619F29D193CF00511507 /* Todo.swift */; };
+		F96661AC29D1B33500511507 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96661AB29D1B33500511507 /* ItemDetail.swift */; };
+		F979B17429D290D2001A5F39 /* TodoShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979B17329D290D2001A5F39 /* TodoShop.swift */; };
+		F979B17629D2922E001A5F39 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979B17529D2922E001A5F39 /* Todo.swift */; };
+		F979B17829D2C7A4001A5F39 /* AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F979B17729D2C7A4001A5F39 /* AddItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +66,10 @@
 		F966619B29D193CE00511507 /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		F966619D29D193CF00511507 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		F966619E29D193CF00511507 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F966619F29D193CF00511507 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		F96661AB29D1B33500511507 /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
+		F979B17329D290D2001A5F39 /* TodoShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoShop.swift; sourceTree = "<group>"; };
+		F979B17529D2922E001A5F39 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		F979B17729D2C7A4001A5F39 /* AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,8 @@
 			children = (
 				F966619629D193CE00511507 /* TodoItem.swift */,
 				F966619729D193CE00511507 /* DaysView.swift */,
+				F96661AB29D1B33500511507 /* ItemDetail.swift */,
+				F979B17729D2C7A4001A5F39 /* AddItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -192,7 +200,8 @@
 			children = (
 				F966619D29D193CF00511507 /* Auth.swift */,
 				F966619E29D193CF00511507 /* User.swift */,
-				F966619F29D193CF00511507 /* Todo.swift */,
+				F979B17329D290D2001A5F39 /* TodoShop.swift */,
+				F979B17529D2922E001A5F39 /* Todo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,15 +339,18 @@
 				F96661A329D193CF00511507 /* TodoItem.swift in Sources */,
 				F95B986729D18B85004BBDE9 /* ContentView.swift in Sources */,
 				F96661A529D193CF00511507 /* TodoView.swift in Sources */,
+				F979B17429D290D2001A5F39 /* TodoShop.swift in Sources */,
 				F96661A729D193CF00511507 /* NewsView.swift in Sources */,
 				F96661A129D193CF00511507 /* Style.swift in Sources */,
+				F96661AC29D1B33500511507 /* ItemDetail.swift in Sources */,
 				F96661A829D193CF00511507 /* Auth.swift in Sources */,
 				F96661A229D193CF00511507 /* TextFieldModifier.swift in Sources */,
-				F96661AA29D193CF00511507 /* Todo.swift in Sources */,
+				F979B17629D2922E001A5F39 /* Todo.swift in Sources */,
 				F966618E29D1939A00511507 /* Domain_iOSApp.swift in Sources */,
 				F96661A629D193CF00511507 /* LoginView.swift in Sources */,
 				F96661A429D193CF00511507 /* DaysView.swift in Sources */,
 				F96661A929D193CF00511507 /* User.swift in Sources */,
+				F979B17829D2C7A4001A5F39 /* AddItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
