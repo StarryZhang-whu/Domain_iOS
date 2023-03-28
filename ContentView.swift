@@ -21,7 +21,10 @@ struct ContentView: View {
                     Text("新闻")
                 }
             TodoView()
+<<<<<<< Updated upstream
                 .badge(5)
+=======
+>>>>>>> Stashed changes
                 .tabItem(){
                     Image(systemName: "circle.circle.fill")
                     Text("圈子")
