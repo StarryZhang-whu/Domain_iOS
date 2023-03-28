@@ -8,30 +8,11 @@
 import SwiftUI
 
 struct DaysView: View {
-<<<<<<< Updated upstream
-    var todoList:[Todo]
-=======
     @ObservedObject var todoshop:TodoShop
->>>>>>> Stashed changes
     var title:String
     var body: some View {
         VStack(alignment: .leading){
             Text(title)
-<<<<<<< Updated upstream
-                .frame(height: 20)
-                .font(.subheadline)
-                .fontWeight(.bold)
-                .padding(.leading, 20.0)
-            Divider()
-            VStack {
-                ForEach(todoList) { item in
-                    TodoItem(todo:item)
-                        .padding(10)
-                }
-            }
-        }.padding(.top,10).background(Rectangle().fill(.ultraThinMaterial).cornerRadius(15).shadow(radius:4))
-            .padding(.horizontal,20)
-=======
                 .frame(width: 70,height: 20)
                 .font(.subheadline)
                 .fontWeight(.bold)
@@ -69,18 +50,11 @@ struct DaysView: View {
                 )
             )
             .padding(.horizontal,20)
-            
-            
->>>>>>> Stashed changes
     }
 }
 
 struct DaysView_Previews: PreviewProvider {
     static var previews: some View {
-<<<<<<< Updated upstream
-        DaysView(todoList:todos[0],title:"今天")
-=======
         DaysView(todoshop: TodoShop(), title:"今天")
->>>>>>> Stashed changes
     }
 }
