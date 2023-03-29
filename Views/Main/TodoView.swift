@@ -12,29 +12,51 @@ struct TodoView: View {
     var body: some View {
         ZStack {
             ScrollView{
-                Text("事项").frame(maxWidth: .infinity,alignment: .leading).fosnt(.largeTitle).fontWeight(.bold)
-                    .frame(height: 10)
-                    .padding()
-                    .padding(.top,20)
+                Spacer().frame(height: 60)
                 VStack(){
-                    HStack {
-                        Image(systemName: "envelope.fill")
-                            .foregroundColor(.accentColor)
-                            .frame(height: 30)
+                    Button(){
+                        withAnimation(.spring()){
+                            todoshop.isReceiving = true
+                        }
+                    } label: {
+                        Image(systemName: "envelope")
+                            .resizable()
+                            .foregroundColor(.red.opacity(0.7))
+                        
+                            .frame(width: 25,height: 20)
                             .background(Rectangle()
                                 .fill(.background)
                             )
+                            .padding(5)
 
-                        Text("**3**").foregroundColor(.accentColor)
-                    }.frame(width: 100)
+                        Text("**3**").foregroundColor(.red.opacity(0.7)).font(.system(size: 20))
+                    }
+                        .frame(width: 80)
+                        .cornerRadius(20)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                 .stroke(.red.opacity(0.7), lineWidth: 2)
+                        )
+                        .offset(x:-25)
                 }.frame(maxWidth: .infinity,alignment: .trailing)
                 DaysView(todoshop: todoshop, title: "今天")
                     .padding(.bottom, 20)
-                    .sheet(isPresented: $todoshop.isEditing){
-                        ItemDetail(todoshop: todoshop, locate: todoshop.editingAt)
-                    }
+                    
             }
+            
             addButton(size: 60).offset(x: UIScreen.main.bounds.width/2 - 60, y: UIScreen.main.bounds.height/2 - 180)
+                .onTapGesture {
+                    todoshop.isAdding = true
+                }
+            if(todoshop.isReceiving){
+                InboxView(todoshop: todoshop)
+            }
+        }
+        .sheet(isPresented: $todoshop.isEditing){
+            TodoDetailView(todoshop: todoshop, locate: todoshop.editingAt)
+        }
+        .sheet(isPresented: $todoshop.isAdding){
+            AddTodoView(todoshop: todoshop)
         }
     }
 }

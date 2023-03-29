@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+
 class TodoShop: ObservableObject{
+    @Published var inbox:[Todo]
     @Published var todos:[Todo]
-    @Published var editingAt:Int = -1
+    @Published var editingAt:Int = 0
     @Published var isEditing:Bool = false
+    @Published var isAdding:Bool = false
+    @Published var isReceiving:Bool = false
+    @Published var receivingAt:Int = 0
+    @Published var isChecking:Bool = false
     
     init(){
         if let data = try UserDefaults.standard.data(forKey: "todos"){
@@ -18,18 +24,36 @@ class TodoShop: ObservableObject{
                 self.todos = decoded
             }else{
                 todos = [
-                    Todo(title: "写作业",startDate: Date(timeIntervalSinceNow: -1000), endDate: Date(timeIntervalSinceNow: 300), circle: "2021级计科7班"),
-                    Todo(title: "睡觉",startDate: Date(timeIntervalSinceNow: -1500), endDate: Date(timeIntervalSinceNow: 2500), circle: "健康中心"),
-                    Todo(title: "摸鱼",startDate: Date(timeIntervalSinceNow: -2000), endDate: Date(timeIntervalSinceNow: 500), circle: "自己"),
+                    Todo(title: "写作业",startDate: Date(timeIntervalSinceNow: -1000), endDate: Date(timeIntervalSinceNow: 300), circle: Ctest[0],detail:"看到这条消息，你大抵是正常的",publisher:"SundayV"),
+                    Todo(title: "睡觉",startDate: Date(timeIntervalSinceNow: -1500), endDate: Date(timeIntervalSinceNow: 2500), circle: Ctest[1],detail:"看到这条消息，你大抵是正常的",publisher:"SundayV"),
+                    Todo(title: "摸鱼",startDate: Date(timeIntervalSinceNow: -2000), endDate: Date(timeIntervalSinceNow: 500), circle: Ctest[2],detail:"看到这条消息，你大抵是正常的",publisher:"SundayV"),
                 ]
             }
         }else{
             todos = [
-                Todo(title: "寄了",startDate: Date(timeIntervalSinceNow: -1000), endDate: Date(timeIntervalSinceNow: 300), circle: "system", detail:"看到这条消息，你的userdefault里应该是没有任何数据的，考虑一下连个网吧～",publisher:"SundayV")
+                Todo(title: "寄了",startDate: Date(timeIntervalSinceNow: -1000), endDate: Date(timeIntervalSinceNow: 300), circle: RCircle(id: 0, name: "system"), detail:"看到这条消息，你的userdefault里应该是没有任何数据的，考虑一下连个网吧～",publisher:"SundayV")
+                
             ]
-            return
+        }
+        
+        if let data = try UserDefaults.standard.data(forKey: "inbox"){
+            if let decoded = try? JSONDecoder().decode([Todo].self, from: data){
+                self.inbox = decoded
+            }else{
+                inbox = [
+                    Todo(title: "收信箱测试",startDate: Date(timeIntervalSinceNow: -1000), endDate: Date(timeIntervalSinceNow: 300), circle: Ctest[0],detail:"看到这条消息，你大抵是正常的",publisher:"SundayV"),
+                    Todo(title: "收信箱测试2",startDate: Date(timeIntervalSinceNow: -1500), endDate: Date(timeIntervalSinceNow: 2500), circle: Ctest[1],detail:"看到这条消息，你大抵是正常的",publisher:"SundayV"),
+                ]
+
+            }
+        }else{
+            inbox = [
+                Todo(title: "收信箱测试",startDate: Date(timeIntervalSinceNow: -1000), endDate: Date(timeIntervalSinceNow: 300), circle: Ctest[0],detail:"看到这条消息，你大抵是正常的",publisher:"SundayV"),
+                Todo(title: "收信箱测试2",startDate: Date(timeIntervalSinceNow: -1500), endDate: Date(timeIntervalSinceNow: 2500), circle: Ctest[1],detail:"看到这条消息，你大抵是正常的",publisher:"SundayV"),
+            ]
         }
     }
+    
     func save(){
         if let encoded = try? JSONEncoder().encode(todos.self){
             UserDefaults.standard.set(encoded, forKey: "todos")
@@ -38,6 +62,11 @@ class TodoShop: ObservableObject{
     
     func addTodo(item:Todo){
         self.todos.append(item)
+        save()
+    }
+    
+    func rmTodo(i:Int){
+        self.todos[i].deleted = true
         save()
     }
 }

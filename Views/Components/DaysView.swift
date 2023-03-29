@@ -10,6 +10,7 @@ import SwiftUI
 struct DaysView: View {
     @ObservedObject var todoshop:TodoShop
     var title:String
+    
     var body: some View {
         VStack(alignment: .leading){
             Text(title)
@@ -33,8 +34,11 @@ struct DaysView: View {
             
             VStack {
                 ForEach(todoshop.todos) { item in
-                    TodoItem(todoshop: todoshop, locate: todoshop.todos.firstIndex(of: item)!)
-                        .padding(10)
+                    if(!item.deleted){
+                        TodoItem(todoshop: todoshop, locate: todoshop.todos.firstIndex(of: item)!)
+                            .padding(10)
+                    }
+                    
                 }
             }
         }

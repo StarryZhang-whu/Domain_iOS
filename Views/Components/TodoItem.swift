@@ -15,6 +15,12 @@ struct TodoItem: View {
         HStack {
             Image(systemName: "square")
                 .frame(width: 36, height: 36)
+                .onTapGesture {
+                    withAnimation(.spring()){
+                        todoshop.todos[locate].deleted = true
+                    }
+                   
+                }
 
             Text(todoshop.todos[locate].title).fontWeight(.semibold).lineLimit(1).foregroundColor(Color("TextColor"))
             Spacer()
@@ -22,6 +28,7 @@ struct TodoItem: View {
                 .font(.caption)
                 .fontWeight(.light)
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             todoshop.editingAt = locate
             todoshop.isEditing = true

@@ -15,22 +15,19 @@ struct Todo: Identifiable,Equatable,Decodable,Encodable{
     var endDate:Date = Date()
     var isPinned = false
     var detail:String = ""
-    var circle:String = ""
+    var circle:RCircle
     var status:Int = 0
     var isUpdate:Bool = false;
     var publisher:String = ""
+    var deleted:Bool = false
     
-    init(){
-        
-    }
-    
-    init(title: String, startDate:Date, endDate:Date, circle:String){
+    init(title: String, startDate:Date, endDate:Date, circle:RCircle){
         self.title = title
         self.startDate = startDate
         self.endDate = endDate
         self.circle = circle
     }
-    init(title: String, startDate:Date, endDate:Date, circle:String, detail:String, publisher:String){
+    init(title: String, startDate:Date, endDate:Date, circle:RCircle, detail:String, publisher:String){
         self.title = title
         self.startDate = startDate
         self.endDate = endDate
