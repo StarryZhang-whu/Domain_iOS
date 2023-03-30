@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Domain_iOSApp: App {
+    var user = UserAuthentication()
+    var modal = Modal()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(user)
+                .environmentObject(modal)
         }
     }
 }

@@ -9,19 +9,20 @@ import SwiftUI
 import Combine
 import Foundation
 
-
-struct LoginView: View {
+struct RegisterView: View {
     @EnvironmentObject var userAuthentication:UserAuthentication
     @EnvironmentObject var modal:Modal
-    @State var account:String = ""
+    @State var email:String = ""
     @State var password:String = ""
+    @State var identifyID:String = ""
+    @State var name:String = ""
     @State var isLoading = false
     var body: some View {
         ZStack {
             VStack(alignment: .leading,spacing: 20){
-                Text("登录")
+                Text("注册")
                     .font(.largeTitle).bold().foregroundStyle(.linearGradient(colors: [.accentColor,Color("SecondaryColor")], startPoint: .topLeading, endPoint: .bottomTrailing))
-                Text("开始使用Domain，做时间的主人。")
+                Text("注册一个Domain账号 开启美好校园生活")
                     .font(.headline)
                     .foregroundColor(.secondary)
                 form
@@ -40,62 +41,37 @@ struct LoginView: View {
     }
     var form: some View {
         Group {
-            TextField("邮箱/ID",text:$account).textField(icon: "envelope.open.fill")
+            TextField("武汉大学邮箱",text:$email).textField(icon: "envelope.open.fill")
             SecureField("密码", text: $password)
                 .textField(icon: "key")
+            Divider()
+            HStack {
+                TextField("验证码",text:$identifyID).textField(icon: "envelope.badge")
+            }
             Button{
-                Task{
-                    handleLogin()
-                }
+                
             } label: {
-                Text("登录")
+                Text("注册")
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity, maxHeight: 50)
                     .background(RoundedRectangle(cornerRadius: 20).stroke(.linearGradient(colors: [.white.opacity(0.8), .black.opacity(0.2)], startPoint: .top, endPoint: .bottom)))
                 
             }
             Divider()
-            Text("没有账号？**点击注册**").font(.footnote)
+            Text("已有账号？**点击登录**").font(.footnote)
                 .foregroundColor(.primary.opacity(0.7))
                 .accentColor(.primary.opacity(0.7))
                 .onTapGesture{
                     withAnimation(){
-                        modal.selectedModal = .register
+                        modal.selectedModal = .login
                     }
                 }
         }
     }
-    func handleLogin() {
-        isLoading = true
-        Task {
-            let loginSuccess = await userAuthentication.login(username: account, password: password)
-            if loginSuccess {
-                print("Login successful")
-                if let token = userAuthentication.userToken {
-                    print("User token: \(token)")
-                    let verifySuccess = await verifyToken()
-                    if verifySuccess {
-                        modal.isLogin = true
-                        print("Token verification successful")
-                    } else {
-                        print("Token verification failed")
-                    }
-                }
-            } else {
-                print("Login failed")
-            }
-            DispatchQueue.main.async {
-                isLoading = false
-            }
-        }
-    }
-
-
-
 }
-struct LoginView_Previews: PreviewProvider {
+struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        RegisterView()
             .environmentObject(UserAuthentication())
             .environmentObject(Modal())
     }

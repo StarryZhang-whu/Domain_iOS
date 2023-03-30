@@ -1,9 +1,14 @@
 import Combine
 import Foundation
 import CryptoKit
-
+struct User{
+    var name:String
+    var bio:String
+    var avator:String
+}
 class UserAuthentication: ObservableObject {
-    @Published var userToken: String? = UserDefaults.standard.string(forKey: "userToken")
+    @Published var userToken: String? = ""
+    @Published var isLogin: Bool = false
     func login(username: String, password: String) async -> Bool {
         let url = "http://124.222.86.204:32366/User/Login"
         let loginRequest = LoginRequest(username: username, password: password)
