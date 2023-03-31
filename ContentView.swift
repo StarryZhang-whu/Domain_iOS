@@ -12,18 +12,18 @@ struct ContentView: View {
         TabView{
             TodoView()
                 .tabItem(){
-                    Image(systemName: "list.bullet.below.rectangle")
+                    Image(systemName: "checklist")
                     Text("事项")
                 }
             TodoView()
                 .tabItem(){
-                    Image(systemName: "newspaper")
+                    Image(systemName: "cup.and.saucer")
                     Text("新闻")
                 }
             TodoView()
                 .badge(5)
                 .tabItem(){
-                    Image(systemName: "circle.circle.fill")
+                    Image(systemName: "c.circle")
                     Text("圈子")
                 }
             AccountView()
@@ -32,6 +32,13 @@ struct ContentView: View {
                     Text("我的")
                 }
         }
+        .onAppear{
+            let appeareance = UITabBarAppearance()
+            appeareance.shadowColor = UIColor(Color.black)
+
+            UITabBar.appearance().backgroundColor = UIColor(.white)
+        }
+        
     }
 }
 

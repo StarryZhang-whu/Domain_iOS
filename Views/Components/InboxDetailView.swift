@@ -135,8 +135,7 @@ struct InboxDetailView: View {
             
             Button(){
                 withAnimation(.spring()){
-                    todoshop.isEditing = false
-                    todoshop.rmTodo(i: locate)
+                    todoshop.receiveInbox(atInbox: locate)
                 }
                 
             }label: {
@@ -161,7 +160,7 @@ struct InboxDetailView: View {
             Button(){
                 withAnimation(.spring()){
                     todoshop.isEditing = false
-                    todoshop.rmTodo(i: locate)
+                    todoshop.rmInbox(i: locate)
                 }
                 
             }label: {

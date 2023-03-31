@@ -16,9 +16,8 @@ struct InboxItem: View {
                 .frame(width: 36, height: 36)
                 .onTapGesture {
                     withAnimation(.spring()){
-                        todoshop.inbox[locate].deleted = true
+                        todoshop.receiveInbox(atInbox: locate)
                     }
-                   
                 }
 
             Text(todoshop.inbox[locate].title).fontWeight(.semibold).lineLimit(1).foregroundColor(Color("TextColor"))
