@@ -9,13 +9,18 @@ import SwiftUI
 
 struct AccountView: View {
     @EnvironmentObject var modal:Modal
+    @State var showEdit = false
     var body: some View {
         ZStack {
-            NavigationView{
+            NavigationStack{
                 List{
                     if(!modal.isLogin)
                     {
-                        person.padding(.vertical)
+                        Button{ showEdit.toggle() }label: {
+                            person.padding(.vertical)
+                        }.sheet(isPresented: $showEdit){
+                            EditView()
+                        }
                     }
                     else
                     {
@@ -45,11 +50,21 @@ struct AccountView: View {
                             Label("帮助", systemImage: "questionmark.circle")
                         }
                     }
-                    NavigationLink { about } label: {
-                        Label("关于", systemImage: "info.circle")
+                    ZStack(alignment: .trailing) {
+                        Text("Alpha 0.0.1").font(.footnote).foregroundColor(.secondary).offset(x:-15)
+                        NavigationLink { about } label: {
+                            Label("关于", systemImage: "info.circle")
+                        }
+                    }
+                    if(modal.isLogin) {
+                        Section {
+                            Button{}label: {
+                                Text("退出账号").frame(maxWidth: .infinity)
+                            }.tint(.red)
+                        }
                     }
                 }
-                .navigationTitle("账户")
+                    .navigationTitle("账户")
             }
             if(modal.showModal){
                 ModalView()
