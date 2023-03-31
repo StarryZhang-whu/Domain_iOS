@@ -62,3 +62,24 @@ struct DaysView_Previews: PreviewProvider {
         DaysView(todoshop: TodoShop(), title:"今天")
     }
 }
+
+//func filterTodayTasks(){
+//        DispatchQueue.global(qos: .userInteractive).async {
+//            let calendar = Calendar.current
+//            let filtered = self.storedTasks.filter {
+//                return calendar.isDate($0.taskDate, inSameDayAs: self.currentDay)
+//            }
+//
+//                .sorted{ task1 ,task2  in
+//                    return task2.taskDate < task1.taskDate
+//
+//                }
+//
+//
+//            DispatchQueue.main.async {
+//                withAnimation {
+//                    self.filteredTasks = filtered
+//                }
+//            }
+//        }
+//    }

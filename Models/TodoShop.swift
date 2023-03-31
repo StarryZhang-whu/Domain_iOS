@@ -69,5 +69,30 @@ class TodoShop: ObservableObject{
         self.todos[i].deleted = true
         save()
     }
+    
+    func rmInbox(i:Int){
+        self.inbox[i].deleted = true
+        save()
+    }
+    
+    func receiveInbox(atInbox:Int){
+        self.inbox[atInbox].received = true
+        self.todos.append(inbox[atInbox])
+        save()
+    }
+    
+    func checkToggle(at:Int){
+        let dispatchWorkItem = DispatchWorkItem {
+            withAnimation(.spring()){
+                self.todos[at].deleted = true
+            }
+        }
+        if(!todos[at].deleting){
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: dispatchWorkItem)
+        }else{
+            dispatchWorkItem.cancel()
+        }
+        todos[at].deleting.toggle()
+    }
 }
 

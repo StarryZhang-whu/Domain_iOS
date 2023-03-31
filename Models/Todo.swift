@@ -19,7 +19,9 @@ struct Todo: Identifiable,Equatable,Decodable,Encodable{
     var status:Int = 0
     var isUpdate:Bool = false;
     var publisher:String = ""
+    var deleting:Bool = false
     var deleted:Bool = false
+    var received:Bool = false
     
     init(title: String, startDate:Date, endDate:Date, circle:RCircle){
         self.title = title

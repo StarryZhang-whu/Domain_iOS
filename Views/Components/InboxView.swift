@@ -57,15 +57,18 @@ struct InboxView: View {
             
             VStack {
                 ForEach(todoshop.inbox) { item in
-                    InboxItem(todoshop: todoshop, locate: todoshop.inbox.firstIndex(of: item)!)
-                        .padding(10)
+                    if(!item.received && !item.deleted){
+                        InboxItem(todoshop: todoshop, locate: todoshop.inbox.firstIndex(of: item)!)
+                            .padding(10)
+                    }
                 }
+                Spacer().frame(maxHeight: 300)
             }
-            Spacer().frame(maxHeight: 150)
-            
+            .frame(minWidth:  UIScreen.main.bounds.width-40, minHeight: 300)
         }
-        .frame(minHeight: 300)
-        .padding(.bottom,10)
+        
+
+
         .background(Rectangle()
             .fill(.white)
             .cornerRadius(15)
@@ -75,7 +78,6 @@ struct InboxView: View {
                     .stroke(.red.opacity(0.7), lineWidth: 1)
             )
         )
-        .padding(.horizontal,20)
         .sheet(isPresented: $todoshop.isChecking){
             InboxDetailView(todoshop: todoshop, locate: todoshop.receivingAt)
         }
@@ -124,7 +126,7 @@ struct InboxView: View {
                 withAnimation(.spring()) {
                     appear = false
                 }
-                withAnimation(.easeOut(duration: 1)) {
+                withAnimation(.easeOut(duration: 2)) {
                     appearBackground = true
                 }
             }
