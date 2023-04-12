@@ -14,7 +14,7 @@ struct AccountView: View {
         ZStack {
             NavigationStack{
                 List{
-                    if(!modal.isLogin)
+                    if(modal.isLogin)
                     {
                         Button{ showEdit.toggle() }label: {
                             person.padding(.vertical)
@@ -58,7 +58,7 @@ struct AccountView: View {
                     }
                     if(modal.isLogin) {
                         Section {
-                            Button{}label: {
+                            Button{ modal.isLogin = false }label: {
                                 Text("退出账号").frame(maxWidth: .infinity)
                             }.tint(.red)
                         }

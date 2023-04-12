@@ -6,9 +6,9 @@
 //
 
 var Ctest:[RCircle] = [
-    RCircle(id: 1, name: "团学"),
-    RCircle(id: 2, name: "计科7班"),
-    RCircle(id: 3, name: "vulpecula")
+    RCircle(name: "团学",creator: "1"),
+    RCircle(name: "计科7班",creator: "2"),
+    RCircle(name: "vulpecula",creator: "3")
 ]
 
 import SwiftUI

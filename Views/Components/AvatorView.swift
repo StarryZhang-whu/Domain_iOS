@@ -10,7 +10,7 @@ import SwiftUI
 struct AvatorView: View {
     @EnvironmentObject var modal:Modal
     var body: some View {
-        AsyncImage(url: URL(string: modal.user.avator)) {
+        AsyncImage(url: URL(string: "https://picsum.photos/200")) {
             phase in
             switch phase {
             case .success(let image):

@@ -31,7 +31,7 @@ class TodoShop: ObservableObject{
             }
         }else{
             todos = [
-                Todo(title: "寄了",startDate: Date(timeIntervalSinceNow: -1000), endDate: Date(timeIntervalSinceNow: 300), circle: RCircle(id: 0, name: "system"), detail:"看到这条消息，你的userdefault里应该是没有任何数据的，考虑一下连个网吧～",publisher:"SundayV")
+                Todo(title: "寄了",startDate: Date(timeIntervalSinceNow: -1000), endDate: Date(timeIntervalSinceNow: 300), circle: RCircle(name: "system",creator: "1"), detail:"看到这条消息，你的userdefault里应该是没有任何数据的，考虑一下连个网吧～",publisher:"SundayV")
                 
             ]
         }
