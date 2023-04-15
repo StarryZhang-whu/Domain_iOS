@@ -10,8 +10,10 @@ import SwiftUI
 struct NewsView: View {
     var body: some View {
         ScrollView {
+            
+            Text("新闻").font(.title).bold().frame(maxWidth: .infinity,alignment: .leading).padding(.leading,20).padding(.vertical,10)
             BannerView()
-                .cornerRadius(30)
+                //.cornerRadius(30)
                 .modifier(OutlineModifier(cornerRadius: 30))
                 .shadow(color: Color("Shadow").opacity(0.3),
                         radius: 30, x: 0, y: 30)
@@ -23,13 +25,9 @@ struct NewsView: View {
                         .frame(height: 230)
                         //.offset(x: proxy.frame(in: .global).minX / 2)
                 )
-                .background(
-                    Image("Blob")
-                        .offset(x: 250, y: -100)
-                        .accessibility(hidden: true)
-                )
-                .padding(20)
-                .padding(.top,50)
+                .padding(.horizontal,20)
+                .padding(.bottom,20)
+                //.padding(.top,50)
             
             Text("计科先锋".uppercased())
                 .modifier(SectionTitleModifier())

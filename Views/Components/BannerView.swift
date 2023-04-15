@@ -38,7 +38,8 @@ struct BannerView: View {
         .padding(.vertical, 40)
         .frame(maxWidth: .infinity)
         .frame(height: 350)
-        .background(.ultraThinMaterial)
+        .background(RoundedRectangle(cornerRadius: 30).stroke(Color("AccentColor").opacity(0.5), lineWidth: 1))
+        .background(RoundedRectangle(cornerRadius:30).fill(.white))
         //.backgroundColor(opacity: 0.5)
     }
 }
