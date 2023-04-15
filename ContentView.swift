@@ -10,27 +10,29 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView{
-            TodoView()
-                .tabItem(){
-                    Image(systemName: "checklist")
-                    Text("事项")
+            Group {
+                TodoView()
+                    .tabItem(){
+                        Image(systemName: "checklist")
+                        Text("事项")
                 }
-            TodoView()
-                .tabItem(){
-                    Image(systemName: "cup.and.saucer")
-                    Text("新闻")
-                }
-            TodoView()
-                .badge(5)
-                .tabItem(){
-                    Image(systemName: "c.circle")
-                    Text("圈子")
-                }
-            AccountView()
-                .tabItem(){
-                    Image(systemName: "person.circle")
-                    Text("我的")
-                }
+                NewsView()
+                    .tabItem(){
+                        Image(systemName: "cup.and.saucer")
+                        Text("新闻")
+                    }
+                CircleView()
+                    .badge(5)
+                    .tabItem(){
+                        Image(systemName: "c.circle")
+                        Text("圈子")
+                    }
+                AccountView()
+                    .tabItem(){
+                        Image(systemName: "person.circle")
+                        Text("我的")
+                    }
+            }
         }
         .onAppear{
             let appeareance = UITabBarAppearance()
