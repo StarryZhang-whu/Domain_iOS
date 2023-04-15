@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewItem: View {
+    @EnvironmentObject var modal:Modal
     var new:New = news[0]
     var body: some View{
         VStack{
@@ -49,11 +50,16 @@ struct NewItem: View {
         )
         .mask(
             RoundedRectangle(cornerRadius: 30))
+        .onTapGesture {
+            withAnimation(.openCard){
+                modal.showNewsDetail.toggle()
+            }
+        }
     }
 }
 
 struct NewItem_Previews: PreviewProvider {
     static var previews: some View {
-        NewItem()
+        NewItem().environmentObject(Modal())
     }
 }
